@@ -21,6 +21,13 @@
     </div>
     <script src="https://www.chartjs.org/dist/2.9.3/Chart.min.js"></script>
     <script src="/static/viewer.js"></script>
+    <select id="unit" onchange="chart.setTimeFormat(this.value)">
+        <option value="ns">Nanosecond</option>
+        <option value="us">Microsecond</option>
+        <option value="ms">Millisecond</option>
+		<option value="s">Second</option>
+    </select>
+    <input type="checkbox" onchange="chart.startFromZero(this.checked)">Start from zero</input>
 </body>
 
 </html>

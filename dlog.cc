@@ -93,10 +93,9 @@ ChartLogger &ChartLogger::Instance(const char *k) {
 ChartLogger &ChartLogger::operator<<(double v) {
   std::ostringstream oss;
   oss << variable_name << ','
-      << std::chrono::steady_clock::now().time_since_epoch().count() << ',' << v
+      << std::chrono::high_resolution_clock::now().time_since_epoch().count() << ',' << v
       << std::endl;
   ws.send(oss.str());
-  std::cout << oss.str() << std::endl;
   return *this;
 }
 
